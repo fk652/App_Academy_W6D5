@@ -5,13 +5,13 @@ class CatsController < ApplicationController
   end
 
   def show
-    if params.has_key?(:id)
+    # if params.has_key?(:id)
 
-      render :show
-    else
-      redirect_to :
-    end
-
+    #   render :show
+    # else
+    #   redirect_to :
+    # end
+    redirect_to "https://httpstatusdogs.com/422-unprocessable-entity", allow_other_host: true
   end
 
   def new
