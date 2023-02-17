@@ -8,12 +8,12 @@
 ActiveRecord::Base.transaction do 
   Cat.destroy_all
 
-  %w(cats).each do |table_name|
-      ApplicationRecord.connection.reset_pk_sequence!(table_name)
-  end 
+#   %w(cats).each do |table_name|
+#       ApplicationRecord.connection.reset_pk_sequence!(table_name)
+#   end 
 
-  k = User.create!(username: "Kaiter")
-  f = User.create!(username: "Fahim")
-  a = User.create!(username: "Alvin")
+  kitty1 = Cat.create!(birth_date: "1997/2/1",color: "black", name: "kitty1",sex: "M", description: "this is the first cat description")
+  kitty2 = Cat.create!(birth_date: "1999/9/5",color: "gray", name: "kitty2", sex: "M", description: "this is the second cat description")
+  kitty3 = Cat.create!(birth_date: "2001/7/5",color: "blue", name: "kitty3", sex: "F", description: "this is the third cat description")
 
 end 

@@ -24,7 +24,7 @@ class Cat < ApplicationRecord
   end
 
   def valid_cat_color
-    if !CAT_COLORS.include?(color)
+    if !CAT_COLOR.include?(color)
       errors.add("Invalid color")
     end
   end

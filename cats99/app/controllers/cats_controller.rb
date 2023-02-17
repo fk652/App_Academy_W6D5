@@ -5,6 +5,12 @@ class CatsController < ApplicationController
   end
 
   def show
+    if params.has_key?(:id)
+
+      render :show
+    else
+      redirect_to :
+    end
 
   end
 
