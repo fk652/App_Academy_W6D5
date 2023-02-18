@@ -37,6 +37,6 @@ class Cat < ApplicationRecord
 
   def age
     ((Date.today - birth_date)/365.0).round
-    # time_ago_in_words(Time.now - Date.new(2001, 2, 3).year, include_years: true)
+    # time_ago_in_words(Time.now - birth_date.year, include_years: true)
   end
 end
