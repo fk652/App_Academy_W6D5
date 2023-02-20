@@ -2,7 +2,7 @@
 #
 # Table name: cats
 #
-#  id          :integer          not null, primary key
+#  id          :bigint           not null, primary key
 #  birth_date  :date             not null
 #  color       :string           not null
 #  name        :string           not null
@@ -11,7 +11,10 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+require 'action_view'
 class Cat < ApplicationRecord
+  include ActionView::Helpers::DateHelper
+
   CAT_COLOR = ['gray', 'black', 'white', 'blue', 'purple', 'brown']
 
   validates :birth_date, :color, :name, :sex, presence: true
@@ -36,7 +39,7 @@ class Cat < ApplicationRecord
   end
 
   def age
-    ((Date.today - birth_date)/365.0).round
-    # time_ago_in_words(Time.now - birth_date.year, include_years: true)
+    # ((Date.today - birth_date)/365.0).round
+    time_ago_in_words(birth_date)
   end
 end

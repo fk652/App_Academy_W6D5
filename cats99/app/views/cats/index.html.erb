@@ -2,6 +2,10 @@
 
 <ol>
 <% @cats.each do |cat| %>
-  <li><%= cat.birth_date %></li>
+  <a href=<%= cat_url(cat.id) %>>
+    <li><%= cat.name %></li>
+  </a>
 <% end %>
 </ol>
+
+<a href="<%= new_cat_url %>">Add New Cat</a>
